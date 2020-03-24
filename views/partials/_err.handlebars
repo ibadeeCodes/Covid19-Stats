@@ -1,0 +1,26 @@
+{{#if error_msg}}
+<div class="ui container">
+    <div class="ui negative message">
+        <i class="close icon"></i>
+        <div class="header">
+            {{error_msg}}
+        </div>
+        <p>Please enter a valid country name.
+        </p>
+    </div>
+    <div class="notfound">
+        <img src="/img/notfound.png" alt="" style="margin: 0 auto;">
+    </div>
+</div>
+{{/if}}
+
+{{#if success_msg}}
+<div class="ui negative message">
+    <i class="close icon"></i>
+    <div class="header">
+        {{success_msg}}
+    </div>
+    <p>That offer has expired
+    </p>
+</div>
+{{/if}}

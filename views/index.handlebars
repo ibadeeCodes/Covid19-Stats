@@ -1,0 +1,49 @@
+<div class="ui inverted segment">
+    <div class="ui inverted pointing secondary menu container">
+        {{!-- <a class="active item" href="/">Corona Stats</a> --}}
+        <h1 href="/" style="color: #fff;"><i class="chart bar outline icon large" style="color: #00bfa6;"></i>Corona
+            Stats</h1>
+    </div>
+</div>
+
+<div class="ui container">
+    {{#if data.covid19Stats}}
+    <h1 style="color: #00bfa6;">Current results</h1>
+    {{else}}
+    <h1 style="color: #00bfa6;">Search recent results</h1>
+    {{/if}}
+    <div class="ui search">
+        <form action="/" method="POST" class="form">
+            <div class="ui big icon input">
+                <input class="prompt" type="text" name="country" placeholder="Search countries...">
+                <i class="search icon"></i>
+            </div>
+        </form>
+        <div class="results"></div>
+    </div>
+
+    {{!-- <p>Results: {{data.covid19Stats.length}}</p> --}}
+    <div class="ui stackable four column grid">
+        {{#each data.covid19Stats}}
+        <div class="column">
+            <div class="ui card stackable claim_Card">
+                <div class="content">
+                    <div class="header">{{province}}</div>
+                    <div class="description">
+                        <p style="font-size: 24px;">Country: &nbsp; <span style="font-weight: 300;">{{country}}</span>
+                        </p>
+                        <p>LastUpdated:&nbsp;&nbsp;&nbsp; {{../time}}</p>
+                        <p>Confirmed:&nbsp;&nbsp;&nbsp; {{confirmed}}</p>
+                        <p>Deaths:&nbsp;&nbsp;&nbsp; <span style="color: red;">{{deaths}}</span></p>
+                        <p>Recovered:&nbsp;&nbsp;&nbsp;
+                            <span style="color: green;">{{recovered}}</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{else}}
+        {{/each}}
+    </div>
+
+
+</div>
