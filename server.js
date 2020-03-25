@@ -46,11 +46,11 @@ app.post('/', (req, res) => {
     console.log(country)
     axios({
       method: 'GET',
-      url: `https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country=${country}`,
+      url: `${process.env.API_URL}${country}`,
       headers: {
         'content-type': 'application/octet-stream',
-        'x-rapidapi-host': 'covid-19-coronavirus-statistics.p.rapidapi.com',
-        'x-rapidapi-key': '990d8d177fmsh097d636a87f4660p1a5355jsn8c22cc52c0b1'
+        'x-rapidapi-host': process.env.API_HOST,
+        'x-rapidapi-key': process.env.API_KEY
       }
     })
       .then(response => {
