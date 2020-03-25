@@ -19,7 +19,7 @@ SignIn to RapidAPI and fill up your :
 npm install
 ```
 
-## Run App
+## Run App 🚀
 
 ```
 npm run dev
