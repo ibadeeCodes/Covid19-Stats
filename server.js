@@ -33,7 +33,7 @@ app.use(function(req, res, next) {
   next()
 })
 
-app.listen(PORT, console.log('server started at 5000'))
+app.listen(PORT, console.log('server started at ' + PORT))
 
 app.get('/', (req, res) => {
   res.render('index')
